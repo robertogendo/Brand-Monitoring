@@ -4,11 +4,11 @@ import os
 
 
 # Load Twitter API credentials from environment variables
-BEARER_TOKEN = os.getenv("AAAAAAAAAAAAAAAAAAAAAH9%2F4gEAAAAAJSML6XltRftkLxW6qNNHgo30fVY%3DC5HuqmU0tmsx5y4v26YOyiimSl31AXs8F6QsWYV7ACV6AZyKsp")
-API_KEY = os.getenv("RAfWFdoEa0xe4BlKAbtZRWxSA")
-API_SECRET = os.getenv("VODTdp2VWdEQLVkz4P5MBfpNIjG0Bp7x4N9Lg36BiUXcuGdCK4")
-ACCESS_TOKEN = os.getenv("412373520-YnUUf3tljKqNIJDY8idvIDPLUsYoZs9E2sOKql8T")
-ACCESS_TOKEN_SECRET = os.getenv("ehwjR4nrYVlAxojiXCp003yNLYdWRGIyCevm000Vis1zi")
+BEARER_TOKEN = os.getenv("token")
+API_KEY = os.getenv("key")
+API_SECRET = os.getenv("secret")
+ACCESS_TOKEN = os.getenv("token")
+ACCESS_TOKEN_SECRET = os.getenv("token")
 
 def run_twitter_search(keyword, limit=20):
     import time
