@@ -94,7 +94,7 @@ def is_suspicious(link):
         return False
     if tld in SUSPICIOUS_TLDS:
         return True
-    if "safaricom" in domain or "m-pesa" in domain:
+    if "example" in domain or "example" in domain:
         return True
     return False
 
