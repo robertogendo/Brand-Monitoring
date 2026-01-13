@@ -1,0 +1,9 @@
+brand_templates:
+  - "BRAND_PLACEHOLDER is giving away"
+  - "Update your BRAND_PLACEHOLDER profile"
+seeds:
+official domains:
+  - "example.com"
+  - "example.org"
+  - "example.net"
+google_safe_browsing_api_key: ""

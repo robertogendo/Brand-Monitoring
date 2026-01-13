@@ -1,0 +1,28 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest rapidfuzz python-dotenv
+      - name: Run pytest
+        run: pytest -q
+
+  trivy-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Trivy
+        run: sudo apt-get update && sudo apt-get install -y wget && wget -qO- https://aquasecurity.github.io/trivy-repo/deb/install.sh | sudo bash
+      - name: Run Trivy (secrets, skip venv)
+        run: trivy fs --scanners secret --skip-dirs .venv --skip-dirs venv --timeout 5m --exit-code 1 --severity HIGH,CRITICAL .
